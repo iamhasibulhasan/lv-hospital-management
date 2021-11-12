@@ -1,0 +1,6 @@
+#all_doctors_tbl_info,#all_doctors_tbl_paginate, #all_doctors_tbl_length,#all_doctors_tbl_filter,#all_doctors_tbl_filter input{
+    color: #ccc;
+}
+#all_appointment_tbl_info,#all_appointment_tbl_paginate, #all_appointment_tbl_length,#all_appointment_tbl_filter,#all_appointment_tbl_filter input{
+    color: #ccc;
+}
