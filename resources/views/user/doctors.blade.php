@@ -9,8 +9,8 @@
                         <div class="header">
                             <img src="{{asset('/')}}media/doctors/{{$data->photo}}" alt="">
                             <div class="meta">
-                                <a href="#"><span class="mai-call"></span></a>
-                                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                <a target="_blank" href="https://www.facebook.com/iamtheridu/"><span class="mai-logo-facebook-f"></span></a>
+                                <a target="_blank" href="https://www.instagram.com/iamtheridu/"><span class="mai-logo-instagram"></span></a>
                             </div>
                         </div>
                         <div class="body">

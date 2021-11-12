@@ -102,6 +102,12 @@ class HomeController extends Controller
         ]);
     }
 
+//    show news/blog page
+
+    public function news(){
+        return view('user.news');
+    }
+
 
     //======================================
 }

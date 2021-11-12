@@ -4,34 +4,35 @@
             <div class="col-sm-6 col-lg-3 py-3">
                 <h5>Company</h5>
                 <ul class="footer-menu">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Career</a></li>
-                    <li><a href="#">Editorial Team</a></li>
-                    <li><a href="#">Protection</a></li>
+                    <li><a href="{{route('index')}}">Home</a></li>
+                    <li><a href="{{route('user.aboutus')}}">About Us</a></li>
+                    <li><a href="{{route('user.ourdoctors')}}">Our Doctors</a></li>
+                    <li><a href="{{route('user.news')}}">News</a></li>
                 </ul>
             </div>
             <div class="col-sm-6 col-lg-3 py-3">
                 <h5>More</h5>
                 <ul class="footer-menu">
-                    <li><a href="#">Terms & Condition</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Advertise</a></li>
-                    <li><a href="#">Join as Doctors</a></li>
+                    <li><a href="{{route('index')}}">Home</a></li>
+                    <li><a href="{{route('user.aboutus')}}">About Us</a></li>
+                    <li><a href="{{route('user.ourdoctors')}}">Our Doctors</a></li>
+                    <li><a href="{{route('user.news')}}">News</a></li>
                 </ul>
             </div>
             <div class="col-sm-6 col-lg-3 py-3">
                 <h5>Our partner</h5>
                 <ul class="footer-menu">
-                    <li><a href="#">One-Fitness</a></li>
-                    <li><a href="#">One-Drugs</a></li>
-                    <li><a href="#">One-Live</a></li>
+                    <li><a href="{{route('index')}}">Home</a></li>
+                    <li><a href="{{route('user.aboutus')}}">About Us</a></li>
+                    <li><a href="{{route('user.ourdoctors')}}">Our Doctors</a></li>
+                    <li><a href="{{route('user.news')}}">News</a></li>
                 </ul>
             </div>
             <div class="col-sm-6 col-lg-3 py-3">
                 <h5>Contact</h5>
-                <p class="footer-link mt-2">351 Willow Street Franklin, MA 02038</p>
-                <a href="#" class="footer-link">701-573-7582</a>
-                <a href="#" class="footer-link">healthcare@temporary.net</a>
+                <p class="footer-link mt-2">Nikunja-2, Khilkhet, Dhaka-1229</p>
+                <a href="#" class="footer-link">+8801747979703</a>
+                <a href="#" class="footer-link">mdhasibulhasan.dev@gmail.com</a>
 
                 <h5 class="mt-3">Social Media</h5>
                 <div class="footer-sosmed mt-3">
