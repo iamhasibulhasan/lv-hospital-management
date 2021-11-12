@@ -24,6 +24,7 @@ Route::get('/home/appointment', [HomeController::class, 'myAppointment'])->name(
 Route::get('/appointment-destroy/{id}', [HomeController::class, 'appointmentDestroy'])->name('appointment.destroy');
 Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('user.aboutus');
 Route::get('/our-doctors', [HomeController::class, 'ourDoctors'])->name('user.ourdoctors');
+Route::get('/contact', [HomeController::class, 'contact'])->name('user.contact');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

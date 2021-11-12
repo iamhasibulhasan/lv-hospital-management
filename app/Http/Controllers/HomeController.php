@@ -93,6 +93,14 @@ class HomeController extends Controller
             'all_data' =>   $all_data
         ]);
     }
+    //    Show Our Doctors page
+
+    public function contact(){
+        $all_data = Doctor::all();
+        return view('user.contact', [
+            'all_data' =>   $all_data
+        ]);
+    }
 
 
     //======================================
