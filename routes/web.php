@@ -15,13 +15,15 @@ use App\Http\Controllers\AdminController;
 |
 */
 //Main Route
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 //Regular User Routes
 Route::get('/home', [HomeController::class, 'redirect'])->middleware('auth', 'verified')->name('home');
 Route::post('/appointment-store', [HomeController::class, 'appointmentStore'])->name('appointment.store');
 Route::get('/home/appointment', [HomeController::class, 'myAppointment'])->name('home.appointment');
 Route::get('/appointment-destroy/{id}', [HomeController::class, 'appointmentDestroy'])->name('appointment.destroy');
+Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('user.aboutus');
+Route::get('/our-doctors', [HomeController::class, 'ourDoctors'])->name('user.ourdoctors');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

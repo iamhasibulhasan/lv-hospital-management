@@ -77,6 +77,23 @@ class HomeController extends Controller
         return back();
     }
 
+//    Show About us page
+
+    public function aboutUs(){
+        $all_data = Doctor::all();
+        return view('user.about-us', [
+            'all_data' =>   $all_data
+        ]);
+    }
+    //    Show Our Doctors page
+
+    public function ourDoctors(){
+        $all_data = Doctor::all();
+        return view('user.our-doctors', [
+            'all_data' =>   $all_data
+        ]);
+    }
+
 
     //======================================
 }

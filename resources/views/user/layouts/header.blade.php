@@ -41,10 +41,10 @@
             <div class="collapse navbar-collapse" id="navbarSupport">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('home')}}">Home</a>
+                        <a class="nav-link" href="{{route('index')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
+                        <a class="nav-link" href="{{route('user.aboutus')}}">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="doctors.html">Doctors</a>
