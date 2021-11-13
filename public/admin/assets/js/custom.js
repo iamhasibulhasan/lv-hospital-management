@@ -250,8 +250,6 @@
             e.preventDefault();
             let id = $(this).attr('rej-patient-id');
 
-            //==============
-
             Swal.fire({
                 toast: true,
                 position: 'top-end',
@@ -278,13 +276,35 @@
                     alertMsg('Cancel', 'warning');
                 }
             })
-
-            //==============
-
-
-
-
         });
+
+    //    Send Mail Modal Show
+        $(document).on('click', '.send-mail', function (e){
+            e.preventDefault();
+            let id = $(this).attr('patient-id');
+            $('#send_mail_form input[name="patient_id"]').attr('value', id);
+            $('#send_mail_modal').modal('show');
+        });
+
+    //    Send mail
+        $(document).on('submit', '#send_mail_form', function (e){
+            e.preventDefault();
+
+            $.ajax({
+                url:'/send-mail',
+                method:'POST',
+                data:new FormData(this),
+                contentType:false,
+                processData:false,
+                success: function (data){
+                    // alert(data);
+                    $('#send_mail_modal').modal('hide');
+                    $("#send_mail_form")[0].reset();
+                    alertMsg('Mail sent successful !', 'success')
+                }
+            });
+        });
+
     //==================================================
     });
 })(jQuery)

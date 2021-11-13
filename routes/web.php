@@ -33,11 +33,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 //Admin Route
-Route::get('/add-doctor', [AdminController::class, 'addDoctors'])->name('add.doctor');
-Route::post('/doctor-store', [AdminController::class, 'store'])->name('doctor.store');
-Route::get('/doctor-destroy/{id}', [AdminController::class, 'destroy'])->name('doctor.destroy');
-Route::get('/doctor-edit/{id}', [AdminController::class, 'edit'])->name('doctor.edit');
-Route::post('/doctor-update', [AdminController::class, 'update'])->name('doctor.update');
-Route::get('/doctor-appointment', [AdminController::class, 'doctorAppointment'])->name('doctor.appointments');
-Route::get('/appointment-accept/{id}', [AdminController::class, 'appointmentAccept'])->name('appointment.accept');
-Route::get('/appointment-reject/{id}', [AdminController::class, 'appointmentReject'])->name('appointment.reject');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/add-doctor', [AdminController::class, 'addDoctors'])->name('add.doctor');
+    Route::post('/doctor-store', [AdminController::class, 'store'])->name('doctor.store');
+    Route::get('/doctor-destroy/{id}', [AdminController::class, 'destroy'])->name('doctor.destroy');
+    Route::get('/doctor-edit/{id}', [AdminController::class, 'edit'])->name('doctor.edit');
+    Route::post('/doctor-update', [AdminController::class, 'update'])->name('doctor.update');
+    Route::get('/doctor-appointment', [AdminController::class, 'doctorAppointment'])->name('doctor.appointments');
+    Route::get('/appointment-accept/{id}', [AdminController::class, 'appointmentAccept'])->name('appointment.accept');
+    Route::get('/appointment-reject/{id}', [AdminController::class, 'appointmentReject'])->name('appointment.reject');
+    Route::post('/send-mail', [AdminController::class, 'sendMail'])->name('send.mail');
+});

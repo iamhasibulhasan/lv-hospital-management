@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use App\Models\Doctor;
+use App\Notifications\SendEmailNotification;
 use Illuminate\Http\Request;
+//use Illuminate\Notifications\Notification;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Notification;
 use PhpParser\Comment\Doc;
 
 class AdminController extends Controller
 {
+
     //Show add doctor page
     public function addDoctors(){
         if (request()->ajax()){
@@ -95,6 +100,7 @@ class AdminController extends Controller
             return datatables()->of(Appointment::where('status', '=', 'In progress...')->orWhere('status', '=', 'Accepted')->latest()->get())->addColumn('action', function ($data){
                 $output = '<a class="btn btn-success app-accept" acc-patient-id="'.$data['id'].'" href="#"><i class="far fa-check-square"></i></a>';
                 $output .= ' <a class="btn btn-danger app-reject" rej-patient-id="'.$data['id'].'" href="#"><i class="fas fa-user-times"></i></a>';
+                $output .= ' <a class="btn btn-danger send-mail" patient-id="'.$data['id'].'" href="#"><i class="far fa-envelope"></i></a>';
                 return $output;
             })->rawColumns(['action'])->make(true);
         }
@@ -114,6 +120,23 @@ public function appointmentReject($id){
 
         $data->status = 'Rejected';
         $data->update();
+}
+
+//Send Mail
+public function sendMail(Request $request){
+        $id = $request->patient_id;
+        $data = Appointment::find($id);
+//        return $id;
+        $details = [
+            'greeting'          =>  $request->greeting,
+            'body'              =>  $request->mail_body,
+            'action_url'        =>  $request->action_url,
+            'action_text'       =>  $request->action_text,
+            'footer'            =>  $request->footer
+        ];
+
+        Notification::send($data, new SendEmailNotification($details));
+//        return $details['greeting'];
 }
 
     //============================================
