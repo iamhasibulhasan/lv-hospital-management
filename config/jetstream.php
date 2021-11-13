@@ -51,7 +51,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Profile Photo Disk
+    | Procfile Photo Disk
     |--------------------------------------------------------------------------
     |
     | This configuration value determines the default disk that will be used
