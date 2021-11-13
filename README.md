@@ -14,7 +14,7 @@
     <li>Laravel Framework 8</li>
     <li>JS, Ajax, jQuery, AlertJS, Sweet Alert2, DataTables, BootStrap5, FontAwesome, MUI etc.</li>
     <li>HTML, Blade Template</li>
-    <li>PHP, MySQL and more...</li>
+    <li>PHP, MySQL,Laravel Jetstream and more...</li>
 </ul>
 
 #### Admin Dashboard
